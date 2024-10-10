@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.LoginController" spacing="10" alignment="CENTER">
+    
+    <children>
+
+        <Label text="Login to Your Account" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- GridPane for form fields -->
+        <GridPane hgap="10" vgap="10" padding="20">
+            <columnConstraints>
+                <ColumnConstraints minWidth="100"/>
+                <ColumnConstraints minWidth="200"/>
+            </columnConstraints>
+            <children>
+                <!-- Username Label & Field -->
+                <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="usernameField" promptText="Enter your username" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <!-- Password Label & Field -->
+                <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <PasswordField fx:id="passwordField" promptText="Enter your password" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                <!-- Invitation Code Label & Field -->
+                <Label text="Invitation Code:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="invitationCodeField" promptText="Enter invitation code (if any)" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+
+        <!-- HBox for action buttons -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Login" onAction="#handleLogin" minWidth="100" />
+            <Button text="Submit Code" onAction="#handleInvitationCode" minWidth="100" />
+        </HBox>
+
+        <!-- Spacer and additional information -->
+        <HBox alignment="CENTER">
+            <Label text="New users must use an invitation code to register." />
+        </HBox>
+
+    </children>
+    
+</VBox>
